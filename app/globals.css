@@ -1,0 +1,61 @@
+@font-face {
+  font-family: "satoshi";
+  src: url("../public/fonts/Satoshi/WEB/fonts/Satoshi-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "satoshi";
+  src: url("../public/fonts/Satoshi/WEB/fonts/Satoshi-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "satoshi";
+  src: url("../public/fonts/Satoshi/WEB/fonts/Satoshi-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@import "tailwindcss";
+
+@theme inline {
+  --font-satoshi: satoshi, "sans-serif";
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #616161;
+  --new_background:#131313;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0f0f0f;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  font-family: var(--font-satoshi) ;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Utility class for the slow spin */
+.animate-spin-slow {
+  animation: spin-slow 6s linear infinite;
+}
