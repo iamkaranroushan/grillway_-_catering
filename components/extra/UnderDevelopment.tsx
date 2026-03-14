@@ -18,7 +18,7 @@ export default function UnderDevelopment() {
     <main className="relative flex flex-col justify-center items-center min-h-screen bg-stone-900 text-white px-6 text-center overflow-hidden">
       {/* Subtle background branding */}
       <span className="absolute inset-0 flex justify-center items-center text-[clamp(2rem,20vw,230rem)] font-extrabold text-white opacity-5 select-none pointer-events-none">
-        Norley's
+        GrillWay
       </span>
 
       {/* Main message */}
