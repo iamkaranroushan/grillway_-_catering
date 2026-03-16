@@ -1,10 +1,8 @@
-import UnderDevelopment from '@/components/extra/UnderDevelopment'
-import React from 'react'
 
-const Menu = () => {
+import UnderDevelopment from "@/components/extra/UnderDevelopment";
+
+export default function MenuPage() {
   return (
-    <div><UnderDevelopment /></div>
+    <UnderDevelopment />
   )
 }
-
-export default Menu

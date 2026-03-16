@@ -10,9 +10,8 @@ export default function DesktopNav() {
   const openModal = useModalStore((s) => s.openModal);
   return (
     <div className="w-full hidden lg:flex items-center justify-between
-                    px-[clamp(1rem,4vw,2rem)] py-[clamp(0.6rem,1.5vw,0.8rem)]
+                    px-[clamp(1rem,4vw,2rem)] py-[clamp(0.3rem,5vw,2rem)]
                     text-white">
-      
       {/* Logo */}
       <Logo />
 
@@ -26,7 +25,7 @@ export default function DesktopNav() {
       {/* Right Icons: Search + Cart */}
       <div className="flex items-center gap-4">
         <button
-        onClick={() => openModal("search")}
+          onClick={() => openModal("search")}
           className="text-white text-xl p-2 rounded-md hover:bg-stone-800 transition-all duration-300"
           aria-label="Search"
         >

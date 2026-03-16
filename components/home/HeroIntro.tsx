@@ -58,9 +58,9 @@ export default function HeroIntro({ onFinish }: HeroIntroProps) {
           delay: 0.2,
           ease: "easeOut",
         }}
-        className="text-stone-400 text-[clamp(1.2rem,3vw,2rem)] font-medium tracking-widest   "
+        className="text-stone-400 text-[clamp(1.2rem,3vw,2rem)] font-regular tracking-widest   "
       >
-        & Catering
+        Catering
       </motion.p>
     </motion.div>
   );

@@ -59,10 +59,13 @@ export default function FeaturedMenu() {
         >
           {[...Array(10)].map((_, i) => (
             <span key={i} className="flex items-center gap-6">
-              <span>GRILLED ON CHARCOAL</span>
+              <span>ORDER NOW</span>
               <span className="text-stone-600">•</span>
-              <span>AUTHENTIC SYRIAN BBQ</span>
+              <span>ORDER NOW</span>
               <span className="text-stone-600">•</span>
+              <span>ORDER NOW</span>
+              <span className="text-stone-600">•</span>
+              
             </span>
           ))}
         </motion.div>

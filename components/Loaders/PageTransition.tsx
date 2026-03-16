@@ -63,7 +63,7 @@ export default function PageTransition() {
             }}
             className="text-stone-400 text-[clamp(1.2rem,3vw,2rem)] font-medium tracking-widest"
           >
-            & Catering
+            Catering
           </motion.p>
         </motion.div>
       )}

@@ -18,8 +18,8 @@ export default function Hero() {
         <div className="relative w-full h-full  overflow-hidden flex flex-col justify-center items-center bg-stone-900">
 
           {/* EST */}
-          <p className="text-xs tracking-[0.4em] text-stone-500 z-20 mb-2 sm:mb-4">
-            EST. 2022
+          <p className="text-[clamp(0.5rem,3vw,1rem)] tracking-[0.1em] text-stone-500 z-20 mb-2 sm:mb-4">
+            20% off on 4 monthly orders
           </p>
 
           {/* Background Typography */}

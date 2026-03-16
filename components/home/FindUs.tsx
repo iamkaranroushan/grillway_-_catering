@@ -25,11 +25,11 @@ export default function FindUs() {
           <span>Find us at</span>
         </div>
 
-        <h3 className="text-[clamp(1.5rem,4vw,3rem)] sm:text-[clamp(2rem,5vw,3.5rem)] font-extrabold mb-4 text-white">
+        <h3 className="text-[clamp(1.8rem,4vw,3rem)] sm:text-[clamp(2rem,5vw,3.5rem)] font-extrabold mb-4 text-white">
           Grillway and Catering
         </h3>
 
-        <p className="text-[clamp(1rem,3vw,1.8rem)] sm:text-[clamp(1.5rem,4vw,2.5rem)] font-bold leading-snug text-stone-400">
+        <p className="text-[clamp(1.4rem,3vw,1.8rem)] sm:text-[clamp(1.5rem,4vw,2.5rem)]  leading-snug text-stone-400">
           817 Bedford Hwy,
           <br />
           Bedford, NS B4A 0K1,

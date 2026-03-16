@@ -11,11 +11,10 @@ interface Props {
 export default function NavLink({ item }: Props) {
   const openModal = useModalStore((s) => s.openModal);
 
-  /* LINK ITEM */
-  if (item.href) {
+  if ("href" in item) {
     return (
       <RouteLink
-        href={item.href}
+        href={item.href!}
         className="text-sm uppercase tracking-wide text-stone-200"
       >
         {item.label}
@@ -23,13 +22,11 @@ export default function NavLink({ item }: Props) {
     );
   }
 
-  /* MODAL ITEM */
-  if (item.modal) {
+  if ("modal" in item) {
     return (
       <button
-        onClick={() => openModal(item.modal)}
-        className="text-sm uppercase tracking-wide bg-orange-700 text-white rounded-md px-6
-            py-3"
+        onClick={() => openModal(item.modal!)}
+        className="text-sm uppercase tracking-wide bg-orange-700 text-white rounded-md px-6 py-3"
       >
         {item.label}
       </button>
