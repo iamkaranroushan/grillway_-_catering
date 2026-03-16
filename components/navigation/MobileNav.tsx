@@ -17,21 +17,31 @@ export default function MobileNav() {
         {/* Left: Hamburger */}
         <button
           onClick={() => setOpen(true)}
-          className="text-white text-3xl p-2 rounded-md hover:bg-stone-800 transition-all duration-300 shadow-md"
+          className="text-white text-[clamp(1.6rem,4vw,2rem)] p-2 rounded-md hover:bg-stone-800 transition-all duration-300 shadow-md"
           aria-label="Open menu">
           <IoMenu />
         </button>
+
+
+        <div className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center pointer-events-none">
+          <span className="text-stone-500 text-[clamp(1rem,4vw,4rem)] tracking-widest font-light">
+            GRILLWAY
+          </span>
+          <span className="text-stone-500 text-xs tracking-widest font-light">
+            & Catering
+          </span>
+        </div>
 
         {/* Right: Search + Cart */}
         <div className="flex items-center gap-4">
           <button
             onClick={() => openModal("search")}
-            className="text-white text-2xl p-2 rounded-md hover:bg-stone-800 transition-all duration-300 shadow-md"
+            className="text-white text-[clamp(1.3rem,4vw,4rem)] p-2 rounded-md hover:bg-stone-800 transition-all duration-300 shadow-md"
             aria-label="Search">
             <FiSearch />
           </button>
           <button
-            className="text-white text-2xl p-2 rounded-md hover:bg-stone-800 transition-all duration-300 shadow-md"
+            className="text-white text-[clamp(1.3rem,4vw,4rem)] p-2 rounded-md hover:bg-stone-800 transition-all duration-300 shadow-md"
             aria-label="Cart">
             <FiShoppingCart />
           </button>

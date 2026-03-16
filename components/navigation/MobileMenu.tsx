@@ -15,18 +15,18 @@ interface Props {
 // Parent sidebar variants (TypeScript-safe)
 const menuVariants: Variants = {
   hidden: { x: "-100%", opacity: 0 },
-  visible: { 
-    x: 0, 
+  visible: {
+    x: 0,
     opacity: 1,
-    transition: { type: "spring", stiffness: 120, damping: 25 } 
+    transition: { type: "spring", stiffness: 120, damping: 25 },
   },
-  exit: { x: "-100%", opacity: 0, transition: { duration: 0.3 } }
+  exit: { x: "-100%", opacity: 0, transition: { duration: 0.3 } },
 };
 
 // Child link variants
 const itemVariants: Variants = {
   hidden: { opacity: 0, x: -20 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.35 } }
+  visible: { opacity: 1, x: 0, transition: { duration: 0.35 } },
 };
 
 export default function MobileMenu({ open, setOpen }: Props) {
@@ -48,13 +48,9 @@ export default function MobileMenu({ open, setOpen }: Props) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.25 }}
-          className="fixed inset-0 z-[100] flex bg-black/60 backdrop-blur-3xl"
-        >
+          className="fixed inset-0 z-[100] flex bg-black/60 backdrop-blur-3xl">
           {/* Clickable overlay */}
-          <div
-            className="absolute inset-0"
-            onClick={() => handleClick()}
-          />
+          <div className="absolute inset-0" onClick={() => handleClick()} />
 
           {/* Sidebar menu */}
           <motion.div
@@ -62,25 +58,29 @@ export default function MobileMenu({ open, setOpen }: Props) {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="relative h-screen w-3/4 sm:w-2/3 md:w-1/3 bg-stone-900 text-white shadow-2xl flex flex-col justify-between overflow-y-auto"
+            className="relative h-screen w-3/4 sm:w-2/3 md:w-1/3 bg-stone-700 text-white shadow-2xl flex flex-col justify-between overflow-y-auto"
             transition={{ staggerChildren: 0.08, when: "beforeChildren" }} // stagger children
           >
             {/* Top: Norley's + Close */}
-            <div className="flex justify-between items-center px-6 pt-6">
-              <span className="text-stone-500 text-lg tracking-widest font-light">
-                Grillway
-              </span>
+            <div className="flex justify-between items-center px-6 pt-4">
+              <div className="flex flex-col items-center">
+                <span className="text-stone-500 text-lg tracking-widest font-light">
+                  GRILLWAY
+                </span>
+                <span className="text-stone-500 text-xs tracking-widest font-light">
+                  & Catering
+                </span>
+              </div>
               <button
                 onClick={() => handleClick()}
-                className="text-3xl text-stone-200 hover:text-white transition p-1 rounded-md"
-                aria-label="Close menu"
-              >
+                className="text-[clamp(1.5rem,4vw,4rem)] text-stone-200 hover:text-white transition p-1 rounded-md"
+                aria-label="Close menu">
                 <RxCross2 />
               </button>
             </div>
 
             {/* Menu links */}
-            <div className="flex flex-col items-start gap-6 mt-8 px-6">
+            <div className="flex flex-col items-start gap-6 mt-8 px-6 flex-1">
               {navLinks.map((item) => (
                 <motion.div
                   key={item.label}
@@ -90,33 +90,38 @@ export default function MobileMenu({ open, setOpen }: Props) {
                   <RouteLink
                     href={item.href!}
                     onBeforeNavigate={() => setOpen(false)}
-                    className="w-full text-left text-[clamp(1.5rem,4vw,2rem)] py-3 px-4 rounded-xl hover:bg-stone-700 transition-all duration-300"
+                    className="w-full text-left text-[clamp(1.8rem,4vw,4rem)]   rounded-xl  transition-all duration-300"
                   >
                     {item.label}
                   </RouteLink>
                 </motion.div>
               ))}
-            </div>
 
-            {/* Bottom: Reservation + Socials */}
-            <div className="flex flex-col items-start gap-6 px-6 pb-8">
               {reservationItem && (
                 <motion.div variants={itemVariants} className="w-full">
                   <button
                     onClick={() => handleClick(() => openModal(reservationItem.modal!))}
-                    className="w-full text-left text-[clamp(1.4rem,3.5vw,1.8rem)] bg-black text-white py-3 rounded-2xl px-4"
+                    className="w-full text-left text-[clamp(1.8rem,4vw,4rem)] p-2   rounded-xl text-stone-600 bg-stone-800 transition-all duration-300"
                   >
                     {reservationItem.label}
                   </button>
                 </motion.div>
               )}
-
+            </div>
+            {/* Bottom: Reservation + Socials */}
+            <div className="px-6 pb-8">
               {/* Social icons */}
               <div className="flex gap-4 mt-4 text-stone-400">
-                <a href="#" target="_blank" className="hover:text-white transition">
+                <a
+                  href="#"
+                  target="_blank"
+                  className="hover:text-white transition">
                   <FaInstagram size={20} />
                 </a>
-                <a href="#" target="_blank" className="hover:text-white transition">
+                <a
+                  href="#"
+                  target="_blank"
+                  className="hover:text-white transition">
                   <FaFacebookF size={20} />
                 </a>
               </div>

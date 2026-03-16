@@ -14,7 +14,7 @@ export default function Hero() {
     <>
       {!introDone && <HeroIntro onFinish={() => setIntroDone(true)} />}
 
-      <section className="bg-black  h-screen">
+      <section className="bg-stone-900  h-screen pb-10">
         <div className="relative w-full h-full  overflow-hidden flex flex-col justify-center items-center bg-stone-900">
 
           {/* EST */}

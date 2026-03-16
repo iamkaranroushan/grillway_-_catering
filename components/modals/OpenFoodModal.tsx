@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { useModalStore } from "@/feature/store/useModalStore";
 import { motion, AnimatePresence } from "framer-motion";
+import { RxCross2 } from "react-icons/rx";
 
 export default function OpenFoodModal() {
   const { closeModal, data } = useModalStore();
@@ -27,7 +28,7 @@ export default function OpenFoodModal() {
         initial={{ opacity: 0, scale: 0.95, y: 40 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 0.3 }}
-        className="relative w-[95vw] h-[80vh] max-w-7xl bg-stone-900 grid md:grid-cols-2 overflow-hidden rounded-xl shadow-2xl text-white"
+        className="relative w-[95vw] h-[85vh] max-w-7xl bg-stone-900 grid md:grid-cols-2 overflow-hidden rounded-xl shadow-2xl text-white"
       >
         {/* TOP BAR */}
         <div className="absolute top-6 left-6 right-6 flex justify-between items-center z-10">
@@ -39,7 +40,7 @@ export default function OpenFoodModal() {
             onClick={closeModal}
             className="text-stone-400 hover:text-white text-xl"
           >
-            ✕
+            <RxCross2 />
           </button>
         </div>
 
@@ -69,7 +70,7 @@ export default function OpenFoodModal() {
             </p>
           </div>
 
-          
+
 
           {/* WEIGHT SELECTOR */}
           {data.weights && (
@@ -97,10 +98,10 @@ export default function OpenFoodModal() {
           <p className="mt-4 md:mt-8 text-2xl font-semibold text-white">{data.price}</p>
 
           {/* QUANTITY */}
-          <div className="flex items-center gap-6 mt-2 md:mt-8">
+          <div className="flex items-center gap-5 mt-6 md:mt-8">
             <button
               onClick={decrease}
-              className="w-9 h-9 md:w-10 md:h-10 border border-stone-600 rounded-full"
+              className="w-8 h-8 md:w-8 md:h-8 border border-stone-600 rounded-full flex items-center justify-center text-lg md:text-base"
             >
               −
             </button>
@@ -112,7 +113,7 @@ export default function OpenFoodModal() {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -10, opacity: 0 }}
                 transition={{ duration: 0.15 }}
-                className="text-xl font-semibold"
+                className="text-[clamp(1rem,2vw,1.3rem)] font-semibold"
               >
                 {quantity}
               </motion.span>
@@ -120,7 +121,7 @@ export default function OpenFoodModal() {
 
             <button
               onClick={increase}
-              className="w-9 h-9 md:w-10 md:h-10 border border-stone-600 rounded-full"
+              className="w-8 h-8 md:w-8 md:h-8 border border-stone-600 rounded-full flex items-center justify-center text-lg md:text-base"
             >
               +
             </button>
@@ -131,7 +132,7 @@ export default function OpenFoodModal() {
             Add To Cart
           </button>
 
-          <p className="mt-2 md:mt-4 text-xs text-stone-500 max-w-xs text-center leading-relaxed">
+          <p className="mt-2 md:mt-4 text-[clamp(0.6rem,2vw,0.8rem)] text-stone-500 max-w-xs text-center leading-relaxed">
             Demo interface — ordering actions are not functional in this preview
             version.
           </p>

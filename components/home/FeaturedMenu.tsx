@@ -51,11 +51,11 @@ export default function FeaturedMenu() {
   return (
     <>
       {/* Marquee */}
-      <div className="overflow-hidden bg-black p-4">
+      <div className="overflow-hidden bg-black p-8">
         <motion.div
-          className="flex gap-10 text-xl sm:text-[clamp(2rem,5vw,3rem)] font-bold text-stone-400 uppercase whitespace-nowrap"
+          className="flex gap-10 text-[clamp(1.5rem,5vw,3rem)] font-bold text-stone-400 uppercase whitespace-nowrap"
           animate={{ x: ["0%", "-50%"] }}
-          transition={{ duration: 20, ease: "linear", repeat: Infinity }}
+          transition={{ duration: 10, ease: "linear", repeat: Infinity }}
         >
           {[...Array(10)].map((_, i) => (
             <span key={i} className="flex items-center gap-6">
@@ -69,8 +69,8 @@ export default function FeaturedMenu() {
       </div>
 
       {/* Menu */}
-      <section className="bg-stone-900 text-white py-16 sm:py-24 md:py-32 px-[clamp(1rem,4vw,2rem)]">
-        <div className="grid md:grid-cols-4 gap-8 sm:gap-10 md:gap-12 max-w-7xl mx-auto">
+      <section className="bg-stone-900 text-white py-20 md:py-32 px-[clamp(1rem,4vw,3rem)]">
+        <div className="grid md:grid-cols-4 gap-12 max-w-[1500px] mx-auto">
           {dishes.map((dish) => (
             <button
               key={dish.name}
@@ -80,21 +80,21 @@ export default function FeaturedMenu() {
                   category: parentCategory,
                 })
               }
-              className="group bg-stone-800/90 rounded-xl p-6 sm:p-8 flex flex-col items-center text-center shadow-lg transition duration-300 hover:bg-stone-700 hover:-translate-y-2"
+              className="group bg-stone-800/90 rounded-2xl p-10 flex flex-col items-center text-center shadow-xl transition duration-300 hover:bg-stone-700 hover:-translate-y-2"
             >
               <Image
                 src={dish.image}
                 alt={dish.name}
-                width={240}
-                height={240}
-                className="object-contain mb-4 sm:mb-6 transition duration-500 group-hover:scale-110"
+                width={320}
+                height={320}
+                className="object-contain mb-6 transition duration-500 group-hover:scale-110"
               />
 
-              <h3 className="text-xl sm:text-2xl font-semibold tracking-wide mb-2 sm:mb-3">
+              <h3 className="text-2xl md:text-3xl font-semibold tracking-wide mb-3">
                 {dish.name}
               </h3>
 
-              <p className="text-sm text-stone-400 leading-relaxed text-center line-clamp-2">
+              <p className="text-sm md:text-base text-stone-400 leading-relaxed line-clamp-2">
                 {dish.description}
               </p>
             </button>
